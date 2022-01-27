@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ListSampleApp.ListPage">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="0, 20, 0, 0" />
+        </OnPlatform>
+    </ContentPage.Padding>
+
+    <StackLayout>
+        <SearchBar Placeholder="Search..."
+                   TextChanged="SearchBar_OnTextChanged"
+                   SearchButtonPressed="SearchBar_OnSearchButtonPressed"
+                   x:Name="searchBar" />
+        <ListView x:Name="listView"
+                  IsGroupingEnabled="True"
+                  GroupDisplayBinding="{Binding Title, Mode=OneWay}"
+                  IsPullToRefreshEnabled="True"
+                  Refreshing="ListView_OnRefreshing"
+                  ItemSelected="ListView_OnItemSelected"
+                  ItemTapped="ListView_OnItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Location, Mode=OneWay}"
+                              Detail="{Binding Period, Mode=OneWay}">
+                        <TextCell.ContextActions>
+                            <MenuItem Text="Delete" IsDestructive="True"
+                                      Clicked="OnDeleted"
+                                      CommandParameter="{Binding ., Mode=OneWay}" />
+                        </TextCell.ContextActions>
+                    </TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

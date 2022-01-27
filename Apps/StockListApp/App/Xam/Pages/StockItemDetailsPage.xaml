@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StockListApp.Xam.Pages.StockItemDetailsPage"
+             xmlns:controls="clr-namespace:StockListApp.Xam.Controls;assembly=StockListApp.Xam"
+             xmlns:resx="clr-namespace:StockList.Core.Resources;assembly=StockList.Core"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout Margin="20, 20, 20, 5">
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{x:Static resx:LabelResources.StockItemDetailsTitle}"
+                              FontFamily="Arial"
+                              FontSize="24">
+                            <Span.ForegroundColor>
+                                <OnPlatform x:TypeArguments="Color">
+                                    <On Platform="Android" Value="Black" />
+                                    <On Platform="iOS" Value="Black" />
+                                    <On Platform="UWP" Value="Black" />
+                                </OnPlatform>
+                            </Span.ForegroundColor>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label Text="{Binding Name, Mode=OneWay}"
+                   Style="{StaticResource TitleStyle}" />
+
+            <controls:CustomLabel Text="{Binding Category, Mode=OneWay}"
+                                  Style="{StaticResource CustomLabelStyle}" />
+
+            <controls:CustomLabel Text="{Binding Price, Mode=OneWay}"
+                                  Style="{StaticResource CustomLabelStyle}" />
+
+            <ActivityIndicator IsRunning="{Binding InProgress, Mode=OneWay}" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

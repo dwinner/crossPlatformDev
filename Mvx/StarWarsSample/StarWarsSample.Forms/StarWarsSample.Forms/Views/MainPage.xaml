@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<views:MvxMasterDetailPage x:TypeArguments="vm:MainViewModel"
+                           xmlns="http://xamarin.com/schemas/2014/forms"
+                           xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                           xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+                           xmlns:vm="clr-namespace:StarWarsSample.Core.ViewModels;assembly=StarWarsSample.Core"
+                           x:DataType="vm:MainViewModel"
+                           x:Class="StarWarsSample.Forms.UI.Views.MainPage"
+                           MasterBehavior="{x:OnPlatform Android=Default, iOS=Default, UWP=Split}">
+</views:MvxMasterDetailPage>

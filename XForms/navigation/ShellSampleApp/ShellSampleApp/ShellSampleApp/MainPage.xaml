@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       mc:Ignorable="d"
+       x:Class="ShellSampleApp.MainPage"
+       CurrentItem="{x:Reference turkey}">
+
+    <!-- Shell display -->
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.2*" />
+                    <ColumnDefinition Width="0.8*" />
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0"
+                       Source="{Binding FlyoutIcon, Mode=Default}"
+                       Margin="5"
+                       HeightRequest="45" />
+                <Label Grid.Column="1"
+                       Text="{Binding Title, Mode=Default}"
+                       FontAttributes="Bold"
+                       VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+    <!-- Europe -->
+    <FlyoutItem Title="Europe" FlyoutIcon="europe128.png">
+        <Tab Title="West">
+            <ShellContent Title="France">
+                <ContentPage Title="France">
+                    <StackLayout>
+                        <Label Text="Paris" />
+                    </StackLayout>
+                </ContentPage>
+            </ShellContent>
+            <ShellContent Title="Great Britain">
+                <ContentPage Title="Britain">
+                    <StackLayout>
+                        <Label Text="London" />
+                    </StackLayout>
+                </ContentPage>
+            </ShellContent>
+        </Tab>
+        <Tab Title="Center">
+            <ShellContent Title="Germany">
+                <ContentPage Title="Germany">
+                    <StackLayout>
+                        <Label Text="Berlin" />
+                    </StackLayout>
+                </ContentPage>
+            </ShellContent>
+            <ShellContent Title="Austria">
+                <ContentPage Title="Austria">
+                    <StackLayout>
+                        <Label Text="Vena" />
+                    </StackLayout>
+                </ContentPage>
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+
+    <!-- Asia -->
+    <FlyoutItem Title="Asia" FlyoutIcon="asia128.png">
+        <!--FlyoutDisplayOptions="AsMultipleItems"-->
+        <Tab Title="Near East">
+            <ShellContent x:Name="turkey" Title="Turkey">
+                <ContentPage Title="Turkey">
+                    <StackLayout>
+                        <Label Text="Ankara" />
+                    </StackLayout>
+                </ContentPage>
+            </ShellContent>
+            <ShellContent Title="Iran">
+                <ContentPage Title="Iran">
+                    <StackLayout>
+                        <Label Text="Tegeran" />
+                    </StackLayout>
+                </ContentPage>
+            </ShellContent>
+        </Tab>
+        <Tab Title="East Asia">
+            <ShellContent Title="China">
+                <ContentPage Title="China">
+                    <StackLayout>
+                        <Label Text="Pekin" />
+                    </StackLayout>
+                </ContentPage>
+            </ShellContent>
+            <ShellContent Title="Japan">
+                <ContentPage Title="Japan">
+                    <StackLayout>
+                        <Label Text="Tokyo" />
+                    </StackLayout>
+                </ContentPage>
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+</Shell>

@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="IslandMenu.App.App">
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <!---Glossy Styles-->
+            <Color x:Key="cardBackgroundColor">#AA000000</Color>
+            <Color x:Key="messageBoxBackgroundColor">#99212331</Color>
+            <Color x:Key="titleBoxBackgroundColor">#99FFFFFF</Color>
+
+            <Color x:Key="nameColor">#ffffff</Color>
+            <Color x:Key="departmentColor">#b0bec5</Color>
+            <Color x:Key="locationColor">#40c4ff</Color>
+            <Color x:Key="moreIconColor">#1de9b6</Color>
+            <Color x:Key="socialColor">#40c4ff</Color>
+            <Color x:Key="messageColor">White</Color>
+            <Color x:Key="titleBoxTextColor">Black</Color>
+
+            <Color x:Key="entryBackgroundColor">#7778909c</Color>
+
+            <Style x:Key="cardStyle" TargetType="Grid">
+                <Setter Property="HeightRequest" Value="80" />
+                <Setter Property="Padding" Value="5,10,0,10" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource cardBackgroundColor}" />
+            </Style>
+
+            <Style x:Key="messageBox" TargetType="Grid">
+                <Setter Property="HeightRequest" Value="25" />
+                <Setter Property="Padding" Value="10" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource messageBoxBackgroundColor}" />
+            </Style>
+
+            <Style x:Key="titleBox" TargetType="Grid">
+                <Setter Property="HeightRequest" Value="25" />
+                <Setter Property="Padding" Value="10" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource titleBoxBackgroundColor}" />
+            </Style>
+
+            <Style x:Key="titleStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="TextColor" Value="{DynamicResource titleBoxTextColor}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+
+            <Style x:Key="titleStyleSmall" TargetType="Label">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="TextColor" Value="{DynamicResource titleBoxTextColor}" />
+            </Style>
+
+            <Style x:Key="shadowStyle" TargetType="BoxView">
+                <Setter Property="HeightRequest" Value="1" />
+                <Setter Property="BackgroundColor" Value="Black" />
+            </Style>
+
+            <Style x:Key="nameStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="TextColor" Value="{DynamicResource nameColor}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+
+            <Style x:Key="departmentStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="TextColor" Value="{DynamicResource departmentColor}" />
+            </Style>
+
+            <Style x:Key="locationStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="9" />
+                <Setter Property="TextColor" Value="{DynamicResource locationColor}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+
+            <Style x:Key="moreStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="10" />
+                <Setter Property="TextColor" Value="{DynamicResource moreIconColor}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalTextAlignment" Value="End" />
+            </Style>
+
+            <Style x:Key="socialStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="10" />
+                <Setter Property="TextColor" Value="{DynamicResource socialColor}" />
+            </Style>
+
+            <Style x:Key="messageLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource messageColor}" />
+                <Setter Property="FontSize" Value="8" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+
+            <Style x:Key="messageEntryStyle" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

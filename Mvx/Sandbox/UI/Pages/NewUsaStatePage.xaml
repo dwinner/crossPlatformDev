@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<view:MvxContentPage
+    x:TypeArguments="vm:NewUsaStateViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:view="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+    xmlns:vm="clr-namespace:MvvxSandboxApp.Core.ViewModels.State;assembly=SandboxApp.Core"
+    x:DataType="vm:NewUsaStateViewModel"
+    x:Class="MvvxSandboxApp.UI.Pages.NewUsaStatePage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="entryStyle" TargetType="Entry">
+                <Setter Property="PlaceholderColor" Value="Olive" />
+                <Setter Property="ClearButtonVisibility" Value="WhileEditing" />
+                <Setter Property="TextColor" Value="DarkGreen" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="HorizontalTextAlignment" Value="End" />
+                <Setter Property="VerticalTextAlignment" Value="Start" />
+                <Setter Property="TextColor" Value="Accent" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Frame BorderColor="Aquamarine" CornerRadius="3" HasShadow="True" Margin="10">
+            <Grid RowSpacing="10" ColumnSpacing="10" Padding="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="2*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="3*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Text="State name" Grid.Row="0" Grid.Column="0" />
+                <Entry Grid.Row="0" Grid.Column="1" Style="{StaticResource entryStyle}"
+                       Placeholder="State"
+                       Text="{Binding NewState.UsaState.StateName, Mode=TwoWay}" />
+
+                <Label Text="Abbreviation" Grid.Row="1" Grid.Column="0" />
+                <Entry Grid.Row="1" Grid.Column="1" Style="{StaticResource entryStyle}"
+                       Placeholder="Abbreviation"
+                       Text="{Binding NewState.UsaState.Abbr, Mode=TwoWay}" />
+
+                <Label Text="Hood year" Grid.Row="2" Grid.Column="0" />
+                <Entry Grid.Row="2" Grid.Column="1" Style="{StaticResource entryStyle}"
+                       Placeholder="Hood year"
+                       Text="{Binding NewState.UsaState.HoodYear, Mode=TwoWay}" />
+
+                <Label Text="Capital" Grid.Row="3" Grid.Column="0" />
+                <Entry Grid.Row="3" Grid.Column="1" Style="{StaticResource entryStyle}"
+                       Placeholder="Capital"
+                       Text="{Binding NewState.UsaState.Capital, Mode=TwoWay}" />
+
+                <Label Text="Capital since year" Grid.Row="4" Grid.Column="0" />
+                <Entry Grid.Row="4" Grid.Column="1" Style="{StaticResource entryStyle}"
+                       Placeholder="Capital since year"
+                       Text="{Binding NewState.UsaState.CapitalSinceYear, Mode=TwoWay}" />
+
+                <Label Text="Area" Grid.Row="5" Grid.Column="0" />
+                <Entry Grid.Row="5" Grid.Column="1" Style="{StaticResource entryStyle}"
+                       Placeholder="Area"
+                       Text="{Binding NewState.UsaState.UsaStateDetail.Area, Mode=TwoWay}" />
+
+                <Label Text="Notes" Grid.Row="6" Grid.Column="0" />
+                <Editor Grid.Row="6" Grid.Column="1"
+                        AutoSize="Disabled" Keyboard="Text"
+                        Text="{Binding NewState.UsaState.UsaStateDetail.Notes, Mode=TwoWay}" />
+
+                <Label Text="State URI" Grid.Row="7" Grid.Column="0" />
+                <Entry Grid.Row="7" Grid.Column="1" Style="{StaticResource entryStyle}"
+                       Placeholder="State URI for wiki" Keyboard="Url"
+                       Text="{Binding NewState.UsaState.UsaStateDetail.StateUri, Mode=TwoWay}" />
+
+                <Label Text="Flag image source" Grid.Row="8" Grid.Column="0" />
+                <Entry Grid.Row="8" Grid.Column="1" Style="{StaticResource entryStyle}"
+                       Placeholder="Flag image source" Keyboard="Url"
+                       Text="{Binding NewState.UsaState.UsaStateDetail.FlagImageUri, Mode=TwoWay}" />
+
+                <Label Text="Municipal" Grid.Row="9" Grid.Column="0" />
+                <Entry Grid.Row="9" Grid.Column="1" Style="{StaticResource entryStyle}"
+                       Placeholder="Municipal" Keyboard="Numeric"
+                       Text="{Binding NewState.UsaState.UsaStateDetail.Municipal, Mode=TwoWay}" />
+
+                <Label Text="Metropolian" Grid.Row="10" Grid.Column="0" />
+                <Entry Grid.Row="10" Grid.Column="1" Style="{StaticResource entryStyle}"
+                       Placeholder="Metropolian" Keyboard="Numeric"
+                       Text="{Binding NewState.UsaState.UsaStateDetail.Metropolian, Mode=TwoWay}" />
+
+                <Label Text="State rank" Grid.Row="11" Grid.Column="0" />
+                <Entry Grid.Row="11" Grid.Column="1" Style="{StaticResource entryStyle}"
+                       Placeholder="State rank" Keyboard="Numeric"
+                       Text="{Binding NewState.UsaState.UsaStateDetail.StateRank, Mode=TwoWay}" />
+
+                <Label Text="Country rank" Grid.Row="12" Grid.Column="0" />
+                <Entry Grid.Row="12" Grid.Column="1" Style="{StaticResource entryStyle}"
+                       Placeholder="State rank" Keyboard="Numeric"
+                       Text="{Binding NewState.UsaState.UsaStateDetail.CountryRank, Mode=TwoWay}" />
+
+                <StackLayout Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal"
+                             VerticalOptions="End" HorizontalOptions="End">
+                    <Button Text="Save"
+                            Command="{Binding AddNewStateCommand, Mode=OneWay}" />
+                    <Button Text="Cancel"
+                            Command="{Binding CloseCommand, Mode=OneWay}" />
+                </StackLayout>
+            </Grid>
+        </Frame>
+    </ContentPage.Content>
+</view:MvxContentPage>

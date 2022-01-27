@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<view:MvxContentPage
+    x:TypeArguments="vm:UsaStateItemViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:view="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+    xmlns:vm="clr-namespace:MvvxSandboxApp.Core.ViewModels.State;assembly=SandboxApp.Core"
+    xmlns:ctrl="clr-namespace:MvvxSandboxApp.UI.Controls;assembly=SandboxApp.UI"
+    x:DataType="vm:UsaStateItemViewModel"
+    x:Class="MvvxSandboxApp.UI.Pages.UsaStateItemPage"
+    Title="{Binding CurrentState.UsaState.StateName, Mode=OneWay}"
+    Padding="5,5,5,5">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Entry">
+                <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+                <Setter Property="HorizontalTextAlignment" Value="Start" />
+                <Setter Property="FlexLayout.Basis" Value="74.99%" />
+                <Setter Property="FlexLayout.AlignSelf" Value="End" />
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="HorizontalTextAlignment" Value="End" />
+                <Setter Property="HorizontalOptions" Value="EndAndExpand" />
+                <Setter Property="FlexLayout.Basis" Value="24.99%" />
+                <Setter Property="FlexLayout.AlignSelf" Value="Start" />
+                <Setter Property="Margin" Value="10" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <FlexLayout Direction="Column" AlignContent="SpaceBetween" JustifyContent="SpaceEvenly" AlignItems="Stretch">
+        <FlexLayout Direction="Row" MinimumHeightRequest="30" HeightRequest="40">
+            <Label Text="State name" />
+            <Entry Text="{Binding Path=CurrentState.UsaState.StateName, Mode=TwoWay}" />
+        </FlexLayout>
+
+        <FlexLayout Direction="Row" MinimumHeightRequest="30" HeightRequest="40">
+            <Label Text="Abbreviation" />
+            <Entry Text="{Binding Path=CurrentState.UsaState.Abbr, Mode=TwoWay}" />
+        </FlexLayout>
+
+        <FlexLayout Direction="Row" MinimumHeightRequest="30" HeightRequest="40">
+            <Label Text="Hood year" />
+            <Entry Text="{Binding Path=CurrentState.UsaState.HoodYear, Mode=TwoWay}" />
+        </FlexLayout>
+
+        <FlexLayout Direction="Row" MinimumHeightRequest="30" HeightRequest="40">
+            <Label Text="Capital" />
+            <Entry Text="{Binding Path=CurrentState.UsaState.Capital, Mode=TwoWay}" />
+        </FlexLayout>
+
+        <FlexLayout Direction="Row" MinimumHeightRequest="30" HeightRequest="40">
+            <Label Text="Capital since year" />
+            <Entry Text="{Binding Path=CurrentState.UsaState.CapitalSinceYear, Mode=TwoWay}" />
+        </FlexLayout>
+
+        <FlexLayout Direction="Row" MinimumHeightRequest="30" HeightRequest="40">
+            <Label Text="Area" />
+            <Entry Text="{Binding Path=CurrentState.UsaState.UsaStateDetail.Area, Mode=TwoWay}" />
+        </FlexLayout>
+
+        <FlexLayout Direction="Row" MinimumHeightRequest="50" HeightRequest="70">
+            <Label Text="Notes" />
+            <Editor HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FlexLayout.Basis="74.99%"
+                    Text="{Binding Path=CurrentState.UsaState.UsaStateDetail.Notes, Mode=TwoWay}" />
+        </FlexLayout>
+
+        <FlexLayout Direction="Row" MinimumHeightRequest="30" HeightRequest="40">
+            <Label Text="See Wiki for details" />
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <ctrl:HyperlinkSpan
+                            Text="{Binding CurrentState.UsaState.UsaStateDetail.StateUri, Mode=TwoWay}"
+                            Url="{Binding CurrentState.UsaState.UsaStateDetail.StateUri, Mode=OneWay}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </FlexLayout>
+
+        <FlexLayout Direction="Row" MinimumHeightRequest="30" HeightRequest="40">
+            <Image Source="{Binding CurrentState.UsaState.UsaStateDetail.FlagImageUri, Mode=OneWay}" />
+        </FlexLayout>
+
+        <FlexLayout Direction="Row" MinimumHeightRequest="30" HeightRequest="40">
+            <Label Text="Municipal" />
+            <Entry Text="{Binding Path=CurrentState.UsaState.UsaStateDetail.Municipal, Mode=TwoWay}" />
+        </FlexLayout>
+
+        <FlexLayout Direction="Row" MinimumHeightRequest="30" HeightRequest="40">
+            <Label Text="Metropolian" />
+            <Entry Text="{Binding Path=CurrentState.UsaState.UsaStateDetail.Metropolian, Mode=TwoWay}" />
+        </FlexLayout>
+
+        <FlexLayout Direction="Row" MinimumHeightRequest="30" HeightRequest="40">
+            <Label Text="State rank" />
+            <Entry Text="{Binding Path=CurrentState.UsaState.UsaStateDetail.StateRank, Mode=TwoWay}" />
+        </FlexLayout>
+
+        <FlexLayout Direction="Row" MinimumHeightRequest="30" HeightRequest="40">
+            <Label Text="Country rank" />
+            <Entry Text="{Binding Path=CurrentState.UsaState.UsaStateDetail.CountryRank, Mode=TwoWay}" />
+        </FlexLayout>
+
+        <FlexLayout Direction="Row" MinimumHeightRequest="30" HeightRequest="60" AlignContent="Center"
+                    JustifyContent="Center">
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Orientation="Horizontal">
+                <Button Text="Update"
+                        Command="{Binding UpdateCommand, Mode=OneWay}" />
+                <Button Text="Delete"
+                        Command="{Binding DeleteCommand, Mode=OneWay}" />
+                <Button Text="Close"
+                        Command="{Binding CloseCommand, Mode=OneWay}" />
+            </StackLayout>
+        </FlexLayout>
+    </FlexLayout>
+
+</view:MvxContentPage>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ButtonImage.ButtonImagePage">
+
+    <StackLayout VerticalOptions="Center"
+                 Spacing="50">
+        
+        <StackLayout.Resources>
+            <ResourceDictionary>
+                <Style TargetType="Button">
+                    <Setter Property="HorizontalOptions" Value="Center" />
+                </Style>
+            </ResourceDictionary>
+        </StackLayout.Resources>
+        
+        <Button Text="Oh Yeah">
+            <Button.Image>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS, Android" Value="ic_action_good.png" />
+                    <On Platform="UWP" Value="Images/ic_action_good.png" />
+                </OnPlatform>
+            </Button.Image>
+        </Button>
+        
+        <Button Text="No Way">
+            <Button.Image>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS, Android" Value="ic_action_bad.png" />
+                    <On Platform="UWP" Value="Images/ic_action_bad.png" />
+                </OnPlatform>
+            </Button.Image>
+        </Button>
+    </StackLayout>
+</ContentPage>

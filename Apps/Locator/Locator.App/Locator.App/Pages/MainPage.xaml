@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Locator.App.Pages.MainPage"
+             BackgroundColor="White"
+             Title="Welcome">
+
+    <ContentPage.Content>
+
+        <Grid RowSpacing="10" Padding="10, 10, 10, 10" VerticalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Image Source="map.png" HeightRequest="120" WidthRequest="120"
+                   Grid.Row="0" Grid.Column="0" />
+
+            <Label Text="{Binding DescriptionMessage, Mode=OneWay}" HorizontalOptions="Center"
+                   FontFamily="Arial"
+                   FontSize="20"
+                   Grid.Row="1" Grid.Column="0">
+                <!--<Label.TextColor>
+                    <OnPlatform x:TypeArguments="Color"
+                                Android="Black"
+                                WinPhone="Black"
+                                iOS="Black" />
+                </Label.TextColor>-->
+            </Label>
+
+            <Button Text="{Binding LocationTitle,Mode=OneWay}"
+                    Command="{Binding LocationCommand,Mode=OneWay}"
+                    BackgroundColor="Silver" Grid.Row="2" Grid.Column="0">
+                <!--<Button.TextColor>
+                    <OnPlatform x:TypeArguments="Color"
+                                Android="Navy"
+                                WinPhone="Blue"
+                                iOS="Black" />
+                </Button.TextColor>-->
+            </Button>
+
+            <Button Text="{Binding ExitTitle,Mode=OneWay}" Command="{Binding ExitCommand,Mode=OneWay}"
+                    BackgroundColor="Silver" Grid.Row="3" Grid.Column="0">
+                <!--<Button.TextColor>
+                    <OnPlatform x:TypeArguments="Color"
+                                Android="Navy"
+                                WinPhone="Blue"
+                                iOS="Black" />
+                </Button.TextColor>-->
+            </Button>
+        </Grid>
+
+    </ContentPage.Content>
+
+</ContentPage>

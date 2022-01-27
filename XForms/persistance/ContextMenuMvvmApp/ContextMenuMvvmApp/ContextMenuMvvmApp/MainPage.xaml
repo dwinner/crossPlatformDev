@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ContextMenuMvvmApp.MainPage">
+
+    <StackLayout>
+        <ListView ItemsSource="{Binding Phones,Mode=OneWay}" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="Up"
+                                      Command="{Binding Path=ListViewModel.MoveToTop, Mode=OneTime}"
+                                      CommandParameter="{Binding}" />
+                            <MenuItem Text="Down"
+                                      Command="{Binding Path=ListViewModel.MoveToBottom, Mode=OneTime}"
+                                      CommandParameter="{Binding}" />
+                            <MenuItem Text="Delete"
+                                      Command="{Binding Path=ListViewModel.Remove, Mode=OneTime}"
+                                      CommandParameter="{Binding}" />
+                        </ViewCell.ContextActions>
+                        <ViewCell.View>
+                            <StackLayout>
+                                <Label Text="{Binding Title, Mode=OneWay}" FontSize="Medium" />
+                                <Label Text="{Binding Company, Mode=OneWay}" FontSize="Small" />
+                                <Label Text="{Binding Price, Mode=OneWay}" FontSize="Small" />
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

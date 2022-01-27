@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<view:MvxContentPage
+    x:TypeArguments="vm:FilterStateViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:view="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+    xmlns:xtk="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:vm="clr-namespace:MvvxSandboxApp.Core.ViewModels.Action;assembly=SandboxApp.Core"
+    x:DataType="vm:FilterStateViewModel"
+    x:Class="MvvxSandboxApp.UI.Pages.FilterStatePage">
+
+    <ContentPage.Resources>
+        <Style x:Key="filterLabel" TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="Start" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="TextColor" Value="Blue" />
+            <Setter Property="FontSize" Value="Large" />
+        </Style>
+    </ContentPage.Resources>
+
+    <StackLayout Orientation="Vertical">
+        <Frame Margin="5" BorderColor="Black" CornerRadius="3">
+            <Grid RowDefinitions="Auto, Auto">
+                <Label Text="Hood year" Grid.Row="0"
+                       Style="{StaticResource filterLabel}" />
+                <xtk:RangeSlider Grid.Row="1"
+                                 MaximumValue="{Binding MaxHoodYear, Mode=OneWay}"
+                                 MinimumValue="{Binding MinHoodYear, Mode=OneWay}"
+                                 LowerValue="{Binding LowerHoodYear, Mode=TwoWay}"
+                                 UpperValue="{Binding UpperHoodYear, Mode=TwoWay}"
+                                 StepValue="1" />
+            </Grid>
+        </Frame>
+        <Frame Margin="5" BorderColor="Black" CornerRadius="3">
+            <Grid RowDefinitions="Auto, Auto">
+                <Label Text="Capital since year" Grid.Row="0"
+                       Style="{StaticResource filterLabel}" />
+                <xtk:RangeSlider Grid.Row="1"
+                                 MaximumValue="{Binding MaxCapitalSinceYear, Mode=OneWay}"
+                                 MinimumValue="{Binding MinCapitalSinceYear, Mode=OneWay}"
+                                 LowerValue="{Binding LowerCapitalSinceYear, Mode=TwoWay}"
+                                 UpperValue="{Binding UpperCapitalSinceYear, Mode=TwoWay}"
+                                 StepValue="1" />
+            </Grid>
+        </Frame>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <Button Text="Apply"
+                    Command="{Binding ApplyFilterCommand, Mode=OneWay}" />
+            <Button Text="Reset"
+                    Command="{Binding Path=ResetFilterCommand, Mode=OneWay}" />
+        </StackLayout>
+    </StackLayout>
+
+</view:MvxContentPage>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NavigationSampleApp.PhonePage"
+             Title="Smart phone Info">
+    <StackLayout>
+        <Entry Text="{Binding Path=Name, Mode=TwoWay}" />
+        <Entry Text="{Binding Path=Company, Mode=TwoWay}" />
+        <StackLayout Orientation="Horizontal">
+            <Stepper x:Name="priceStepper" Minimum="0" Maximum="100000"
+                     Increment="100" Value="{Binding Path=Price, Mode=TwoWay}" />
+            <Label FontSize="Large"
+                   Text="{Binding Source={x:Reference Name=priceStepper}, Path=Value, Mode=OneWay}" />
+        </StackLayout>
+        <Button Text="Save" Clicked="OnSave" />
+    </StackLayout>
+</ContentPage>

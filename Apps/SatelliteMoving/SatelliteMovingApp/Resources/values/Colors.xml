@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    <color name="SplashTitleColor">#FFFF0F</color>
+    <color name="VersionBackground">#1A1A48</color>
+    <color name="VersionColor">#F0F0F0</color>
+    <color name="MenuTitleColor">#FFFF0F</color>
+    <color name="MenuItemGlow">#F00</color>
+    <color name="SettingsTitleColor">#FF0000</color>
+</resources>

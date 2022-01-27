@@ -1,0 +1,845 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3BC0AC7E-3B3B-4D3F-9CC0-B2BDECC460A6}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TemplateGuid>{84dd83c5-0fe3-4294-9419-09e7c8ba324f}</TemplateGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FlagQuiz.App</RootNamespace>
+    <AssemblyName>FlagQuiz_App</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
+    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>PdbOnly</DebugType>
+    <DebugSymbols>True</DebugSymbols>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidManagedSymbols>true</AndroidManagedSymbols>
+    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ListExtensions.cs" />
+    <Compile Include="MainActivity.cs" />
+    <Compile Include="MainActivityFragment.cs" />
+    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SettingsActivity.cs" />
+    <Compile Include="SettingsActivityFragment.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AndroidManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\activity_main.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\content_main.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\values\colors.xml" />
+    <AndroidResource Include="Resources\values\dimens.xml" />
+    <AndroidResource Include="Resources\values\ic_launcher_background.xml" />
+    <AndroidResource Include="Resources\values\strings.xml" />
+    <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\menu\menu_main.xml" />
+    <AndroidResource Include="Resources\mipmap-anydpi-v26\ic_launcher.xml" />
+    <AndroidResource Include="Resources\mipmap-anydpi-v26\ic_launcher_round.xml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher_round.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_launcher_round.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_launcher_round.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_launcher_round.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher_round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2.1" />
+    <PackageReference Include="Xamarin.Android.Support.v4">
+      <Version>27.0.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.v7.AppCompat">
+      <Version>27.0.2.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\anim\incorrect_shake.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\color\button_text_color.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_settings_24dp.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\layout-sw700dp-land\content_main.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\activity_settings.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\content_settings.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\fragment_main.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\fragment_settings.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Algeria.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Angola.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Benin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Botswana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Burkina_Faso.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Burundi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Cameroon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Cape_Verde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Central_African_Republic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Chad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Comoros.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Dem._Rep._of_the_Congo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Djibouti.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Egypt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Eq._Guinea.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Eritrea.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Ethiopia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Gabon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Gambia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Ghana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Guinea.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Guinea_Bissau.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Ivory_Coast.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Kenya.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Lesotho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Liberia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Libya.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Madagascar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Malawi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Mali.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Mauritania.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Mauritius.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Morocco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Mozambique.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Namibia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Niger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Nigeria.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Republic_of_the_Congo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Rwanda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Sao_Tome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Senegal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Seychelles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Sierra_Leone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Somalia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-South_Africa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Sudan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Swaziland.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Tanzania.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Togo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Tunisia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Uganda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Zambia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Africa\Africa-Zimbabwe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Afghanistan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Armenia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Azerbaijan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Bahrain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Bangladesh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Bhutan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Brunei.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Cambodia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-China.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Christmas_Island.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Georgia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Hong_Kong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-India.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Indonesia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Iran.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Iraq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Israel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Japan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Jordan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Kazakhstan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Kuwait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Kyrgyzstan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Laos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Lebanon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Macao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Malaysia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Maldives.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Mongolia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Myanmar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Nepal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-North_Korea.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Oman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Pakistan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Philippines.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Qatar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Saudi_Arabia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Singapore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-South_Georgia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-South_Korea.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Sri_Lanka.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Syria.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Taiwan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Tajikistan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Thailand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Tibet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Timor-Leste.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Turkey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Turkmenistan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-UAE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Uzbekistan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Vietnam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Asia\Asia-Yemen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Albania.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Andorra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Austria.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Belarus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Belgium.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Bosnia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Bulgaria.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Croatia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Cyprus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Czech_Republic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Denmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Estonia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Faroe_Islands.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Finland.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-France.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Germany.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Gibraltar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Greece.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Greenland.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Hungary.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Iceland.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Ireland.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Italy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Latvia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Liechtenstein.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Lithuania.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Luxembourg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Macedonia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Malta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Moldova.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Monaco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Netherlands.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Norway.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Poland.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Portugal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Romania.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Russian_Federation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-San_Marino.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Serbia_and_Montenegro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Slovakia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Slovenia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Soviet_Union.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Spain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Sweden.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Switzerland.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Ukraine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-United_Kingdom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Europe\Europe-Vatican_City.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\North_America\North_America-Anguilla.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\North_America\North_America-Antigua_and_Barbuda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\North_America\North_America-Aruba.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\North_America\North_America-Bahamas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\North_America\North_America-Barbados.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\North_America\North_America-Belize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\North_America\North_America-Bermuda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\North_America\North_America-British_Virgin_Islands.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\North_America\North_America-Canada.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\North_America\North_America-Cayman_Islands.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\North_America\North_America-Costa_Rica.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\North_America\North_America-Cuba.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\North_America\North_America-Dominica.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\North_America\North_America-Dominican_Republic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\North_America\North_America-El_Salvador.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\North_America\North_America-Grenada.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\North_America\North_America-Guatemala.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\North_America\North_America-Haiti.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\North_America\North_America-Honduras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\North_America\North_America-Jamaica.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\North_America\North_America-Martinique.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\North_America\North_America-Mexico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\North_America\North_America-Montserrat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\North_America\North_America-Nicaragua.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\North_America\North_America-Panama.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\North_America\North_America-Puerto_Rico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\North_America\North_America-Saint_Kitts_and_Nevis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\North_America\North_America-Saint_Lucia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\North_America\North_America-Saint_Pierre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\North_America\North_America-St._Vicent_and_Grenadines.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\North_America\North_America-Turks_and_Caicos_Islands.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\North_America\North_America-United_States_of_America.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\North_America\North_America-US_Virgin_Islands.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Oceania\Oceania-American_Samoa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Oceania\Oceania-Australia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Oceania\Oceania-Cook_Islands.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Oceania\Oceania-Fiji.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Oceania\Oceania-Guam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Oceania\Oceania-Kiribati.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Oceania\Oceania-Marshall_Islands.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Oceania\Oceania-Micronesia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Oceania\Oceania-Nauru.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Oceania\Oceania-New_Zealand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Oceania\Oceania-Niue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Oceania\Oceania-Norfolk_Island.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Oceania\Oceania-Palau.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Oceania\Oceania-Papua_New_Guinea.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Oceania\Oceania-Pitcairn_Islands.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Oceania\Oceania-Samoa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Oceania\Oceania-Soloman_Islands.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Oceania\Oceania-Tonga.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Oceania\Oceania-Tuvalu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Oceania\Oceania-Vanuatu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Oceania\Oceania-Wallis_and_Futuna.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\South_America\South_America-Argentina.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\South_America\South_America-Bolivia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\South_America\South_America-Brazil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\South_America\South_America-Chile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\South_America\South_America-Colombia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\South_America\South_America-Ecuador.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\South_America\South_America-Falkland_Islands.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\South_America\South_America-French_Polynesia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\South_America\South_America-Guyana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\South_America\South_America-Netherlands_Antilles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\South_America\South_America-Paraguay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\South_America\South_America-Peru.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\South_America\South_America-Suriname.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\South_America\South_America-Trinidad_and_Tobago.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\South_America\South_America-Uruguay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\South_America\South_America-Venezuela.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\arrays.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values-v21\styles.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values-w820dp\dimens.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\xml\preferences.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+    Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+  -->
+</Project>

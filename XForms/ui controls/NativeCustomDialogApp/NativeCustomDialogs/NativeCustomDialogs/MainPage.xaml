@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:NativeCustomDialogs"
+             xmlns:vm="clr-namespace:NativeCustomDialogs.ViewModels"
+             x:Class="NativeCustomDialogs.MainPage">
+
+    <ContentPage.BindingContext>
+        <vm:MainViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+        <ListView ItemsSource="{Binding Todos}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell IsEnabled="{Binding IsEnabled}">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Title}" Style="{DynamicResource ListItemTextStyle}"
+                                   HorizontalOptions="Start" VerticalOptions="Center" />
+                            <Switch IsToggled="{Binding IsDone}" HorizontalOptions="End"
+                                    VerticalOptions="Center" IsEnabled="{Binding IsEnabled}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Command="{Binding CreateTodoCommand}" Margin="20"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Text="Create Todo" />
+    </StackLayout>
+
+</ContentPage>

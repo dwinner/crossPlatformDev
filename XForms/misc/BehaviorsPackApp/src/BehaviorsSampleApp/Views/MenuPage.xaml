@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BehaviorsSampleApp.Views.MenuPage"
+             Title="Menu">
+    <ScrollView>
+        <StackLayout VerticalOptions="Center" Margin="10">
+            <Label Text="Please select one." />
+            <Button Text="Display Alert Sample" Clicked="DisplayAlertButton_OnClicked" />
+            <Button Text="Display Action Sheet Sample" Clicked="DisplayActionSheetButton_OnClicked" />
+            <Button Text="Notification Request Sample" Clicked="NotificationRequestButton_OnClicked" />
+            <Button Text="Event to Command Sample" Clicked="EventToCommandButton_OnClicked" />
+            <Button Text="SelectedItemBehavior Sample" Clicked="SelectedItemBehavior_OnClicked" />
+            <Button Text="SelectedItemAttachedProperty Sample" Clicked="SelectedItemAttachedProperty_OnClicked" />
+            <Button Text="ClearSelectedItemAttachedProperty Sample"
+                    Clicked="ClearSelectedItemAttachedProperty_OnClicked" />
+            <Button Text="WebView Sample" Clicked="WebView_Clicked" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

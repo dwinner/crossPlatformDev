@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ui:ExtendedContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                        xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                        xmlns:behaviours="clr-namespace:FileStorageApp.Behaviours;assembly=FileStorageApp"
+                        xmlns:res="clr-namespace:FileStorageApp.Properties;assembly=FileStorageApp"
+                        xmlns:ui="clr-namespace:FileStorageApp.UI;assembly=FileStorageApp"
+                        mc:Ignorable="d"
+                        x:Class="FileStorageApp.Pages.EditFilePage"
+                        BackgroundColor="White"
+                        Title="Files">
+    <ui:ExtendedContentPage.Content>
+        <Grid Style="{StaticResource gridStyle}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="60" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Entry Text="{Binding FileName, Mode=TwoWay}"
+                   BackgroundColor="Silver"
+                   Grid.Row="0" Grid.Column="0">
+                <Entry.Behaviors>
+                    <behaviours:LowercaseEntryBehaviour />
+                </Entry.Behaviors>
+            </Entry>
+
+            <Editor Text="{Binding Content, Mode=TwoWay}"
+                    BackgroundColor="Silver" Grid.Row="1" Grid.Column="0" />
+
+            <Button Command="{Binding SaveFileCommand, Mode=OneWay}"
+                    Text="{x:Static res:Resources.SaveText}"
+                    Style="{StaticResource buttonStyle}"
+                    Grid.Row="2" Grid.Column="0" />
+
+            <Button Command="{Binding DeleteFileCommand, Mode=OneWay}"
+                    Text="{x:Static res:Resources.DeleteText}"
+                    Style="{StaticResource buttonStyle}"
+                    Grid.Row="3" Grid.Column="0" />
+        </Grid>
+    </ui:ExtendedContentPage.Content>
+</ui:ExtendedContentPage>

@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81;</PackageTargetFallback>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+    <Version>2.1.1</Version>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
+    <FileVersion>2.1.0.0</FileVersion>
+    <Authors>Atsushi Nakamura</Authors>
+    <Company>Atsushi Nakamura</Company>
+    <Title>Xamarin.Forms.BehaviorsPack</Title>
+    <Product>Xamarin.Forms.BehaviorsPack</Product>
+    <Description>Behavior library for Xamarin.Forms. EventToCommandBehavior, SelectedItemBehavior, DisplayAlertBehavior. DisplayActionSheetBehavior and other.</Description>
+    <PackageProjectUrl>https://github.com/nuitsjp/Xamarin.Forms.BehaviorsPack</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/nuitsjp/Xamarin.Forms.BehaviorsPack</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageTags>Xamarin Forms Behavior Behaviors Xamarin.Forms Xamarin.Forms.Behavior Xamarin.Forms.Behaviors Xamarin.Forms.BehaviorsPack BehaviorsPack</PackageTags>
+    <DebugType>full</DebugType>
+    <Copyright>Copyright 2017 - 2019 nuits.jp</Copyright>
+    <PackageReleaseNotes>https://github.com/nuitsjp/Xamarin.Forms.BehaviorsPack/releases</PackageReleaseNotes>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="3.5.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="EventToCommandAttachedProperties.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EventToCommandAttachedProperties.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="EventToCommandAttachedProperties.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EventToCommandAttachedProperties.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

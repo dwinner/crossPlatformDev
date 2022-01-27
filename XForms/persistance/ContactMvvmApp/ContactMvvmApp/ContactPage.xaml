@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:ContactMvvmApp.ViewModel;assembly=ContactMvvmApp"
+             mc:Ignorable="d"
+             x:Class="ContactMvvmApp.ContactPage"
+             d:DataContext="{d:DesignInstance vm:ContactsPageViewModel}"
+             x:Name="page">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding AddContactCommand, Mode=OneWay}" />
+    </ContentPage.ToolbarItems>
+    <ListView 
+        ItemsSource="{Binding Contacts, Mode=OneWay}" 
+        SelectedItem="{Binding SelectedContact, Mode=TwoWay}"
+        ItemSelected="OnContactSelected">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding FullName, Mode=TwoWay}">
+                    <TextCell.ContextActions>
+                        <MenuItem 
+                            Text="Delete" 
+                            IsDestructive="true" 
+                            Command="{Binding Source={x:Reference page}, Path=ViewModel.DeleteContactCommand, Mode=OneWay}"
+                            CommandParameter="{Binding ., Mode=OneWay}" />
+                    </TextCell.ContextActions>
+                </TextCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+</ContentPage>

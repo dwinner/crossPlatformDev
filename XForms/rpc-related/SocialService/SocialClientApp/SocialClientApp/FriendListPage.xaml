@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SocialClientApp.FriendListPage">
+
+    <StackLayout>
+        <Button Text="Add" Command="{Binding CreateFriendCommand, Mode=OneWay}"
+                IsEnabled="{Binding IsLoaded, Mode=OneWay}" />
+        <ListView ItemsSource="{Binding Friends, Mode=OneWay}"
+                  SelectedItem="{Binding SelectedFriend, Mode=TwoWay}"
+                  HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout>
+                                <Label Text="{Binding Name, Mode=OneWay}" FontSize="Medium" />
+                                <Label Text="{Binding Email, Mode=OneWay}" FontSize="Small" />
+                                <Label Text="{Binding Phone, Mode=OneWay}" FontSize="Small" />
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackLayout IsVisible="{Binding IsBusy, Mode=OneWay}"
+                     HorizontalOptions="Center"
+                     VerticalOptions="CenterAndExpand"
+                     Padding="20">
+            <Label Text="Loading data..." TextColor="Gray" HorizontalOptions="Center" />
+            <ActivityIndicator IsRunning="{Binding IsBusy, Mode=OneWay}" Color="Accent" />
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>

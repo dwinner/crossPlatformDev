@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController" storyboardIdentifier="MainPage">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Club name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="429">
+                                <rect key="frame" x="20" y="62" width="107" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="107" id="444"/>
+                                    <constraint firstAttribute="height" constant="27" id="446"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="430">
+                                <rect key="frame" x="227" y="65" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stadium:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="431">
+                                <rect key="frame" x="20" y="106" width="82" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="82" id="449"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="432">
+                                <rect key="frame" x="227" y="105" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capacity:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="433">
+                                <rect key="frame" x="17" y="156.5" width="88" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="88" id="452"/>
+                                    <constraint firstAttribute="height" constant="21" id="453"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="434">
+                                <rect key="frame" x="227" y="156" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="580"/>
+                                    <constraint firstAttribute="height" constant="21" id="581"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Number of shuffles:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="435">
+                                <rect key="frame" x="20" y="223.5" width="461" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="435" secondAttribute="height" multiplier="59:7" id="467"/>
+                                    <constraint firstAttribute="width" constant="177" id="468"/>
+                                    <constraint firstAttribute="height" constant="21" id="469"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="436">
+                                <rect key="frame" x="229" y="581" width="121" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="121" id="472"/>
+                                    <constraint firstAttribute="height" constant="30" id="473"/>
+                                    <constraint firstAttribute="width" constant="121" id="474"/>
+                                    <constraint firstAttribute="height" constant="30" id="475"/>
+                                    <constraint firstAttribute="width" secondItem="436" secondAttribute="height" multiplier="121:30" id="476"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="437">
+                                <rect key="frame" x="30" y="300" width="374" height="30"/>
+                                <state key="normal" title="Shuffle teams"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1259" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="30" y="353" width="374" height="30"/>
+                                <state key="normal" title="Show map"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="429" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="443"/>
+                            <constraint firstItem="429" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="42" id="445"/>
+                            <constraint firstItem="431" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="447"/>
+                            <constraint firstItem="431" firstAttribute="top" secondItem="429" secondAttribute="bottom" constant="17" id="448"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="433" secondAttribute="leading" constant="3" id="450"/>
+                            <constraint firstItem="433" firstAttribute="top" secondItem="431" secondAttribute="bottom" constant="30" id="451"/>
+                            <constraint firstItem="435" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="464"/>
+                            <constraint firstItem="435" firstAttribute="top" secondItem="433" secondAttribute="bottom" constant="46" id="465"/>
+                            <constraint firstItem="437" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="300" id="478" multiplier="2"/>
+                            <constraint firstAttribute="trailing" secondItem="437" secondAttribute="trailing" constant="10" id="479"/>
+                            <constraint firstItem="437" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="481"/>
+                            <constraint firstAttribute="bottom" secondItem="436" secondAttribute="bottom" constant="125" id="568"/>
+                            <constraint firstItem="436" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="229" id="569"/>
+                            <constraint firstItem="430" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="65" id="585"/>
+                            <constraint firstAttribute="trailing" secondItem="430" secondAttribute="trailing" constant="145" id="586"/>
+                            <constraint firstItem="432" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="105" id="587"/>
+                            <constraint firstAttribute="trailing" secondItem="432" secondAttribute="trailing" constant="145" id="588"/>
+                            <constraint firstItem="434" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="156" id="589"/>
+                            <constraint firstAttribute="trailing" secondItem="434" secondAttribute="trailing" constant="145" id="590"/>
+                            <constraint id="1342" firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="1259" secondAttribute="trailing" constant="10"/>
+                            <constraint id="1343" firstItem="8bC-Xf-vdC" firstAttribute="bottom" secondItem="1259" secondAttribute="bottom" constant="353"/>
+                            <constraint id="1345" firstItem="1259" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="CapacityLabel" destination="434" id="name-outlet-434"/>
+                        <outlet property="ClubNameLabel" destination="430" id="name-outlet-430"/>
+                        <outlet property="ShuffleTeamsButton" destination="437" id="name-outlet-437"/>
+                        <outlet property="ShufflesNumTextField" destination="436" id="name-outlet-436"/>
+                        <outlet property="StadiumLabel" destination="432" id="name-outlet-432"/>
+                        <outlet property="ButtonShowMap" destination="1259" id="name-outlet-1259"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <scene sceneID="870">
+            <objects>
+                <viewController id="871" sceneMemberID="viewController" customClass="MapViewController" storyboardIdentifier="MapPage">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="868"/>
+                        <viewControllerLayoutGuide type="bottom" id="869"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="872">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="916" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="30" y="30" width="354" height="696"/>
+                            </mapView>
+                        </subviews>
+                        <constraints>
+                            <constraint id="966" firstItem="916" firstAttribute="top" secondItem="868" secondAttribute="bottom" constant="10"/>
+                            <constraint id="967" firstItem="869" firstAttribute="top" secondItem="916" secondAttribute="bottom" constant="10"/>
+                            <constraint id="968" firstAttribute="trailingMargin" secondItem="916" secondAttribute="trailing" constant="10"/>
+                            <constraint id="969" firstItem="916" firstAttribute="leading" secondItem="872" secondAttribute="leadingMargin" constant="10"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="916" id="name-outlet-916"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="873" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="422" y="-1"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListViewCompleteGuide.ContactsPage"
+             xmlns:viewModels="clr-namespace:ListViewCompleteGuide.ViewModels"
+             Title="Contacts">
+
+    <ContentPage.BindingContext>
+        <viewModels:ContactsViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:Key="MediumSize"
+                        x:TypeArguments="x:Double"
+                        iOS="14"
+                        Android="16"
+                        WinPhone="16"/>
+
+            <OnPlatform x:Key="LargeSize"
+                        x:TypeArguments="x:Double"
+                        iOS="16"
+                        Android="18"
+                        WinPhone="18"/>
+            <OnPlatform x:Key="LittleSize"
+                        x:TypeArguments="x:Double"
+                        iOS="11"
+                        Android="12"
+                        WinPhone="12"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+        <ListView x:Name="MyListView"
+                  ItemsSource="{Binding AllContacts}"
+                  SelectedItem="{Binding SelectedContact}"
+                  GroupDisplayBinding="{Binding Title}"
+                  GroupShortNameBinding="{Binding ShortName}"
+                  RowHeight="50"
+                  IsGroupingEnabled="True">
+            
+
+            <ListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label Margin="10, 0,0,0" Text="{Binding Title}" FontSize="{StaticResource LargeSize}"/>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.GroupHeaderTemplate>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Margin="10, 0,0,0">
+                            <Label Text="{Binding Name}" FontSize="{StaticResource MediumSize}"
+                   Style="{DynamicResource ListItemDetailTextStyle}" />
+                            <Label Text="{Binding Email}" FontSize="{StaticResource LittleSize}"
+                   Style="{DynamicResource ListItemTextStyle}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+    </ContentPage.Content>
+
+</ContentPage>

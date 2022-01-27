@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="AppName">Satellite App</string>
+    <string name="SplashScreenActivityTitle">Satellite Motion</string>
+    <string name="AppDesc">Modeling the movement of the satellites around the planet</string>
+    <string name="SplashTopTitle">Satellites</string>
+    <string name="SplashBottomTitle">Motion</string>
+    <string name="AppVersionInfo">Version 1.0\nCopyright © 2012 AppDev United</string>
+    <string name="SatelliteImagesDesc">A satellite image</string>
+    <string name="MainMenuTitle">Main Menu</string>
+    <string name="EarthImageDesc">The Earth image</string>
+    <string name="DemoString">Dummy</string>
+    <string name="MenuItemStart">Start</string>
+    <string name="MenuItemSettings">Settings</string>
+    <string name="MenuItemAbout">About</string>
+    <string name="AboutTitle">About</string>
+    <string name="SettingsTopTitle">Settings</string>
+    <string name="SaveBtnText">Save</string>
+    <string name="AddBtnText">Add</string>
+    <string name="DelBtnTxt">Delete</string>
+    <string name="EarthCollideError">The first satellite collide with the earth. Its distance from the center of the earth shall be not less than %1$s</string>
+    <string name="SatelliteCollideError">Satellite with a height of %1$s encounters with the satellite from a height of %2$s. The distance between them should be at least %3$s</string>
+    <string name="NegativeTimeError">Time must be positive value</string>
+    <string name="NegativeDistanceError">Distance must be positive value</string>
+    <string name="TypeMismatchError">Time must be long.\nDistance must be float</string>
+    <string name="SpeedHint">Time in ms</string>
+    <string name="DistanceHint">Distance in dp</string>
+    <string name="SpeedTableHeader">Speed</string>
+    <string name="DistanceTableHeader">Distance</string>
+    <string name="SpeedHelpText">Here, the speed - this time, in milliseconds, for which the satellite makes a complete revolution around the globe</string>
+    <string name="DistanceHelpText">Distance - The length, in dp (density-independent pixels) from the center of the earth to the satellite center</string>
+    <string name="SatellitesHaveNot">There are no satellites. Refer to the settings screen to add satellites or through the options menu, or from the main menu</string>
+</resources>

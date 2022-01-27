@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ServerInteropApp.MainPage">
+
+    <StackLayout>
+        <Label x:Name="connectionStateLabel" Text="Connection disabled"
+               FontSize="Large"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+        <Label x:Name="connectionDetailsLabel" FontSize="Large"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+        <Button Text="Get the course"
+                Command="{Binding LoadDataCommand, Mode=OneWay}" />
+        <Label FontSize="Medium" Text="Current source" />
+        <Label FontSize="Medium" FontAttributes="Bold"
+               Text="{Binding Rate, Mode=OneWay}" />
+        <Label FontSize="Medium" Text="Market" />
+        <Label FontSize="Medium" FontAttributes="Bold"
+               Text="{Binding Ask, Mode=OneWay}" />
+        <Label FontSize="Medium" Text="Offer" />
+        <Label FontSize="Medium" FontAttributes="Bold"
+               Text="{Binding Bid, Mode=OneWay}" />
+    </StackLayout>
+
+</ContentPage>

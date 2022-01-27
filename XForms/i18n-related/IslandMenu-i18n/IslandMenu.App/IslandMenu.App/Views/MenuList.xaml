@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:h="clr-namespace:IslandMenu.App.Helpers;assembly=IslandMenu.App"
+             xmlns:v="clr-namespace:IslandMenu.App.Views;assembly=IslandMenu.App"
+             xmlns:m="clr-namespace:IslandMenu.App.Models;assembly=IslandMenu.App"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance m:Restaurant}"
+             x:Class="IslandMenu.App.Views.MenuList">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <h:ImageResourceConverter x:Key="imageResourceCvt" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout Padding="10,10,10,10">
+                <Grid HeightRequest="200">
+                    <Image Opacity="0.75"
+                           Source="{Binding Photo, Converter={StaticResource imageResourceCvt}}"
+                           Scale="1"
+                           Aspect="AspectFill" />
+                    <Grid Style="{DynamicResource titleBox}">
+                        <StackLayout Spacing="1">
+                            <Label Text="{Binding Name}" Style="{DynamicResource TitleStyle}" />
+                            <Label Text="{Binding Address1}" Style="{DynamicResource titleStyleSmall}" />
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <Label Text="{Binding Town}" Style="{DynamicResource titleStyleSmall}" />
+                                <Label Text="{Binding PhoneNumber}" Style="{DynamicResource titleStyleSmall}"
+                                       HorizontalOptions="EndAndExpand" />
+                            </StackLayout>
+                        </StackLayout>
+                    </Grid>
+                </Grid>
+
+                <ListView ItemsSource="{Binding Menu}"
+                          SeparatorVisibility="None"
+                          BackgroundColor="Transparent"
+                          SeparatorColor="#DFDFDF"
+                          HasUnevenRows="True"
+                          RowHeight="100">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell BindingContextChanged="OnBindingContextChanged">
+                                <v:MenuListItem />
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

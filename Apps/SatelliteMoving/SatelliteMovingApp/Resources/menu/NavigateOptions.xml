@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/action_search"
+          android:showAsAction="always"
+          android:text="Search"
+          android:actionViewClass="android.widget.SearchView" />
+    <item android:id="@+id/StartMenuItemId"
+          android:icon="@android:drawable/ic_media_play"
+          android:title="@string/MenuItemStart" />
+    <item android:id="@+id/SettingsMenuItemId"
+          android:icon="@android:drawable/ic_menu_preferences"
+          android:title="@string/MenuItemSettings" />
+    <item android:id="@+id/AboutMenuItemId"
+          android:icon="@android:drawable/ic_menu_help"
+          android:title="@string/MenuItemAbout" />
+
+</menu>

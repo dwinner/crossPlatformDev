@@ -1,0 +1,66 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\clubcontinental.jpg" />
+    <None Remove="Images\firstchancepizza.jpg" />
+    <None Remove="Images\islandmenubanner.jpg" />
+    <None Remove="Images\lastchancebarandgrill.jpg" />
+    <None Remove="Images\restauranteboomboom.jpg" />
+    <None Remove="Images\seamarketstefan.jpg" />
+    <None Remove="Services\data-de.json" />
+    <None Remove="Services\data-es.json" />
+    <None Remove="Services\data-zh.json" />
+    <None Remove="Services\data.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Images\clubcontinental.jpg" />
+    <EmbeddedResource Include="Images\firstchancepizza.jpg" />
+    <EmbeddedResource Include="Images\islandmenubanner.jpg" />
+    <EmbeddedResource Include="Images\lastchancebarandgrill.jpg" />
+    <EmbeddedResource Include="Images\restauranteboomboom.jpg" />
+    <EmbeddedResource Include="Images\seamarketstefan.jpg" />
+    <EmbeddedResource Include="Services\data-de.json" />
+    <EmbeddedResource Include="Services\data-es.json" />
+    <EmbeddedResource Include="Services\data-zh.json" />
+    <EmbeddedResource Include="Services\data.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Xamarin.Forms" Version="4.5.0.356" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Helpers\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Views\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\IslandMenu.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>IslandMenu.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\IslandMenu.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>IslandMenu.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

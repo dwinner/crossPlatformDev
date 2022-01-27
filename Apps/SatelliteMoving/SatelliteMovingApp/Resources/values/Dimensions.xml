@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <dimen name="SplashTitleSize">20pt</dimen>
+    <dimen name="VersionSpacing">3pt</dimen>
+    <dimen name="VersionSize">5pt</dimen>
+    <dimen name="MenuTitleSize">16pt</dimen>
+    <dimen name="MenuItemSize">15pt</dimen>
+    <dimen name="AboutTextPadding">20px</dimen>
+    <dimen name="AboutTextSize">7pt</dimen>
+    <dimen name="SettingsTitleSize">15pt</dimen>
+</resources>

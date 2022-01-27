@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SocialClientApp.FriendPage">
+
+    <StackLayout>
+        <StackLayout>
+            <Label Text="Name" />
+            <Entry Text="{Binding Path=Model.Name, Mode=TwoWay}" FontSize="Medium" />
+            <Label Text="Email" />
+            <Entry Text="{Binding Path=Model.Email, Mode=TwoWay}" FontSize="Medium" />
+            <Label Text="Phone" />
+            <Entry Text="{Binding Path=Model.Phone,Mode=TwoWay}" FontSize="Medium" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <Button Text="Save"
+                    Command="{Binding ViewModel.SaveFriendCommand, Mode=OneWay}"
+                    CommandParameter="{Binding Model, Mode=OneWay}" />
+            <Button Text="Delete"
+                    Command="{Binding ViewModel.DeleteFriendCommand, Mode=OneWay}"
+                    CommandParameter="{Binding Model, Mode=OneWay}" />
+            <Button Text="Back"
+                    Command="{Binding ViewModel.BackCommand, Mode=OneWay}" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SpeechTalk.App.Pages.MainPage">
+
+    <ContentPage.Content>
+        <Grid RowSpacing="0" Padding="10, 10, 10, 10" VerticalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label FontSize="20" FontFamily="Arial" Grid.Row="0" Grid.Column="0"
+                   Text="{Binding DescriptionMessage, Mode=OneWay}" />
+
+            <Entry Grid.Row="1" Grid.Column="0"
+                   Placeholder="{Binding SpeakEntryPlaceholder, Mode=OneWay}"
+                   Text="{Binding SpeakText, Mode=TwoWay}" />
+
+            <Button Grid.Row="2" Grid.Column="0" Text="{Binding SpeakTitle, Mode=OneWay}"
+                    Command="{Binding SpeakCommand, Mode=OneWay}" />
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>

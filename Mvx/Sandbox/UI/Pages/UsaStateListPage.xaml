@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<view:MvxContentPage
+    x:Class="MvvxSandboxApp.UI.Pages.UsaStateListPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:view="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+    xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+    xmlns:bhvPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
+    xmlns:vm="clr-namespace:MvvxSandboxApp.Core.ViewModels.State;assembly=SandboxApp.Core"
+    xmlns:behaviors="clr-namespace:MvvxSandboxApp.UI.Behaviors;assembly=SandboxApp.UI"
+    x:DataType="vm:UsaStateListViewModel"
+    x:Name="root"
+    x:TypeArguments="vm:UsaStateListViewModel">
+
+    <ContentPage.ToolbarItems>
+        <!--<ToolbarItem Text="View"
+                     Command="{Binding ViewSelectedStateCommand, Mode=OneWay}" />
+        <ToolbarItem Text="Add"
+                     Command="{Binding AddNewStateCommand, Mode=OneWay}" />
+        <ToolbarItem Text="Delete"
+                     Command="{Binding DeleteSelectedCommand, Mode=OneWay}" />-->
+        <ToolbarItem Text="Filter"
+                     Command="{Binding ApplyFilterCommand, Mode=OneWay}" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <SearchBar Placeholder="Search USA states" x:Name="stSearchBar">
+                <SearchBar.Behaviors>
+                    <bhvPack:EventToCommandBehavior
+                        EventName="TextChanged"
+                        Command="{Binding BindingContext.DataContext.SearchStateCommand,
+                            Source={x:Reference root}, Mode=OneWay}"
+                        CommandParameter="{Binding Text,
+                            Source={x:Reference stSearchBar}, Mode=OneWay}" />
+                </SearchBar.Behaviors>
+            </SearchBar>
+            <view:MvxListView Grid.Row="1"
+                              SelectedItem="{Binding SelectedState, Mode=TwoWay}"
+                              HorizontalOptions="FillAndExpand"
+                              VerticalOptions="FillAndExpand"
+                              SelectionMode="Single"
+                              ItemsSource="{mvx:MvxBind States}"
+                              ItemClick="{mvx:MvxBind UsaStateClickCommand}"
+                              BackgroundColor="Transparent"
+                              RowHeight="{x:OnPlatform Android=55, iOS=55, UWP=40}"
+                              SeparatorVisibility="Default"
+                              IsPullToRefreshEnabled="True"
+                              RefreshCommand="{Binding RefreshStatesCommand, Mode=OneWay}">
+                <!-- behavoirs -->
+                <ListView.Behaviors>
+                    <bhvPack:EventToCommandBehavior
+                        EventName="ItemSelected"
+                        Command="{Binding BindingContext.DataContext.UsaStateSelectedCommand, 
+                            Source={x:Reference root},
+                            Mode=OneWay}" />
+                    <behaviors:InfiniteScrollBehavior
+                        LoadMoreCommand="{Binding FetchMoreCommand,
+                            Mode=OneWay}" />
+                </ListView.Behaviors>
+                <!-- item template -->
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <view:MvxViewCell>
+                            <!-- context actions -->
+                            <ViewCell.ContextActions>
+                                <!--<MenuItem Text="View"
+                                          Command="{Binding BindingContext.DataContext.UsaStateClickCommand,
+                                                        Source={x:Reference root},
+                                                        Mode=OneWay}"
+                                          CommandParameter="{Binding ., Mode=OneWay}" />-->
+                                <MenuItem Text="Delete"
+                                          Command="{Binding BindingContext.DataContext.DeleteStateCommand,
+                                                        Source={x:Reference root},
+                                                        Mode=OneWay}"
+                                          CommandParameter="{Binding ., Mode=OneWay}" />
+                                <MenuItem Text="Select"
+                                          Command="{Binding BindingContext.DataContext.ForceSelectCommand,
+                                                        Source={x:Reference root},
+                                                        Mode=OneWay}"
+                                          CommandParameter="{Binding ., Mode=OneWay}" />
+                            </ViewCell.ContextActions>
+                            <!-- layout -->
+                            <StackLayout Orientation="Vertical">
+                                <Label x:DataType="vm:UsaStateViewModel"
+                                       FontSize="Medium"
+                                       Margin="10,0,0,0"
+                                       HorizontalOptions="Start"
+                                       HorizontalTextAlignment="Start"
+                                       VerticalOptions="Center"
+                                       VerticalTextAlignment="Center"
+                                       TextColor="Accent"
+                                       FontAttributes="Bold"
+                                       Text="{Binding SummaryName, Mode=OneWay}" />
+                                <!--<BoxView HeightRequest="1" Color="Black" />-->
+                            </StackLayout>
+                        </view:MvxViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </view:MvxListView>
+        </Grid>
+    </ContentPage.Content>
+
+</view:MvxContentPage>

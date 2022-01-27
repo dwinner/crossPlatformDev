@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListViewSample.MainPage">
+
+    <StackLayout>
+        <Label Text="{Binding Source={x:Reference Name=phoneList}, Path=SelectedItem.Name, Mode=OneWay}"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand"
+               FontSize="Large"
+               x:Name="selectedLabel" />
+        <ListView x:Name="phoneList"
+                  HasUnevenRows="True"
+                  SeparatorColor="Red"
+                  ItemsSource="{Binding PhoneGroups, Mode=OneWay}"
+                  GroupDisplayBinding="{Binding Name, Mode=OneWay}"
+                  IsGroupingEnabled="True"
+                  CachingStrategy="RecycleElement"
+                  ItemSelected="PhoneList_OnItemSelected"
+                  ItemTapped="PhoneList_OnItemTapped">
+            <ListView.Header>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Model list" FontSize="Large" BackgroundColor="#c5cae9"
+                           HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+            </ListView.Header>
+            <ListView.Footer>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="March results" FontSize="Large" TextColor="Gray"
+                           BackgroundColor="#c5cae9"
+                           HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+            </ListView.Footer>
+            <ListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <ViewCell Height="30">
+                        <StackLayout>
+                            <Label Text="{Binding Name, Mode=OneWay}" FontSize="Large" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.GroupHeaderTemplate>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <!--<local:CustomCell
+                        ImagePath="{Binding ImagePath, Mode=OneWay}"
+                        ImageWidth="45"
+                        ImageHeight="60"
+                        Title="{Binding Title, Mode=OneWay}"
+                        Detail="{Binding Company, StringFormat='Company flagman {0}', Mode=OneWay}" />-->
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="{Binding ImagePath, Mode=OneWay}"
+                                       WidthRequest="45" HeightRequest="60" />
+                                <StackLayout>
+                                    <!--<Label Text="{Binding Company, Mode=OneWay}" FontSize="Large" />-->
+                                    <Label Text="{Binding Title, Mode=OneWay}" />
+                                    <Label Text="{Binding Price, Mode=OneWay}" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Button Text="Add" Clicked="OnAdd" />
+            <Button Text="Remove" Clicked="OnRemove" />
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/TopRightImageViewId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/SatelliteImagesDesc"
+            android:src="@drawable/satellite_fourth" />
+        <ImageView
+            android:id="@+id/TopLeftImageViewId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:contentDescription="@string/SatelliteImagesDesc"
+            android:src="@drawable/satellite_fourth" />
+        <TextView
+            android:id="@+id/SettingsTitleTextViewId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:shadowColor="@android:color/darker_gray"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="10"
+            android:text="@string/SettingsTopTitle"
+            android:textColor="@color/SettingsTitleColor"
+            android:textSize="@dimen/SettingsTitleSize" />
+    </RelativeLayout>
+    <ScrollView
+        android:id="@+id/SatellitesInfoScrollViewId"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.85"
+        android:scrollbars="vertical">
+        <TableLayout
+            android:id="@+id/SatellitesInfoTableLayoutId"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*" />
+    </ScrollView>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/DeleteButtonId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/DelBtnTxt" />
+        <Button
+            android:id="@+id/AddButtonId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/AddBtnText" />
+        <Button
+            android:id="@+id/SaveButtonId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/SaveBtnText" />
+    </RelativeLayout>
+</LinearLayout>

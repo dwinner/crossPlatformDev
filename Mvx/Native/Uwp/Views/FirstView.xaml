@@ -1,0 +1,22 @@
+﻿<mvx:MvxWindowsPage
+    x:Class="MvvmCrossDemo.Uwp.Views.FirstView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mvx="using:MvvmCross.Platforms.Uap.Views"
+    xmlns:vm="using:MvvmCrossDemo.Core.ViewModels"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel d:DataContext="{d:DesignInstance vm:FirstViewModel}">
+        <TextBlock Text="Your name" />
+        <TextBox Text="{Binding UserName, Mode=TwoWay}" />
+        <Button Content="Click Me!" Command="{Binding GetGreetingCommand, Mode=OneWay}" />
+        <TextBlock Text="{Binding Greeting, Mode=TwoWay}" />
+        <Button Content="Post List" Command="{Binding NavToPostListAsyncCommand, Mode=OneWay}" />
+        <TextBlock Text="{Binding LaunchTime, Mode=OneWay}" />
+        <Button Content="Send Email by Xam" Command="{Binding SendEmailCommand, Mode=OneWay}" />
+    </StackPanel>
+
+</mvx:MvxWindowsPage>

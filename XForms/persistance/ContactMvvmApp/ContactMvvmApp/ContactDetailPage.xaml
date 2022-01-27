@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:ContactMvvmApp.ViewModel;assembly=ContactMvvmApp"
+             mc:Ignorable="d"
+             x:Class="ContactMvvmApp.ContactDetailPage"
+             d:DataContext="{d:DesignInstance vm:ContactDetailViewModel}">
+
+    <TableView Intent="Form">
+        <TableRoot>
+            <TableSection Title="Name">
+                <EntryCell Label="First name"
+                           Text="{Binding Path=Contact.FirstName, Mode=TwoWay}" />
+                <EntryCell Label="Last name"
+                           Text="{Binding Path=Contact.LastName, Mode=TwoWay}" />
+            </TableSection>
+            <TableSection Title="Contact">
+                <EntryCell Label="Phone"
+                           Text="{Binding Path=Contact.Phone, Mode=TwoWay}"
+                           Keyboard="Numeric" />
+                <EntryCell Label="Email"
+                           Text="{Binding Path=Contact.Email, Mode=TwoWay}"
+                           Keyboard="Email" />
+            </TableSection>
+            <TableSection Title="Other">
+                <SwitchCell Text="Blocked"
+                            On="{Binding Path=Contact.IsBlocked, Mode=TwoWay}" />
+            </TableSection>
+            <TableSection>
+                <ViewCell>
+                    <Button Text="Save"
+                            Command="{Binding SaveCommand, Mode=OneWay}" />
+                </ViewCell>
+            </TableSection>
+        </TableRoot>
+    </TableView>
+
+</ContentPage>

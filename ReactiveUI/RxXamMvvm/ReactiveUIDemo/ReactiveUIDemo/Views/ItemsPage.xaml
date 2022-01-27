@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ui:ContentPageBase xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:viewModels="clr-namespace:ReactiveUIDemo.ViewModel"
+                    xmlns:ui="clr-namespace:ReactiveUIDemo.Views"
+                    x:TypeArguments="viewModels:ItemsViewModel"
+                    x:Class="ReactiveUIDemo.Views.ItemsPage">
+
+    <StackLayout>
+        <ListView ItemsSource="{Binding Todos, Mode=OneWay}"
+                  SelectedItem="{Binding SelectedTodo, Mode=TwoWay}"
+                  CachingStrategy="RecycleElement">
+
+            <!--Custom View Cells-->
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell IsEnabled="{Binding IsEnabled, Mode=TwoWay}">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Title, Mode=OneWay}" Style="{DynamicResource ListItemTextStyle}"
+                                   HorizontalOptions="Start" />
+                            <Switch IsToggled="{Binding IsDone, Mode=TwoWay}"
+                                    HorizontalOptions="End"
+                                    IsEnabled="{Binding IsEnabled, Mode=TwoWay}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+        <StackLayout Orientation="Horizontal">
+            <Entry Text="{Binding TodoTitle, Mode=TwoWay}" HorizontalOptions="FillAndExpand" />
+            <Button Text="Add" HorizontalOptions="End"
+                    Command="{Binding AddCommand, Mode=OneWay}" />
+        </StackLayout>
+    </StackLayout>
+
+</ui:ContentPageBase>

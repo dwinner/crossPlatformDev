@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ui:ExtendedContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                        xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                        xmlns:ui="clr-namespace:FileStorageApp.UI;assembly=FileStorageApp"
+                        mc:Ignorable="d"
+                        x:Class="FileStorageApp.Pages.MainPage">
+
+    <ui:ExtendedContentPage.Content>
+        <Grid Style="{StaticResource gridStyle}" VerticalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Image Source="files.png" HeightRequest="120" WidthRequest="120"
+                   Grid.Row="0" Grid.Column="0" />
+
+            <Label Text="{Binding DescriptionMessage, Mode=OneWay}"
+                   TextColor="Black" HorizontalOptions="Center"
+                   FontFamily="Arial"
+                   FontSize="20"
+                   Grid.Row="1" Grid.Column="0" />
+
+            <Button Text="{Binding FilesTitle, Mode=OneWay}"
+                    Command="{Binding LocationCommand, Mode=OneWay}"
+                    Style="{StaticResource buttonStyle}"
+                    Grid.Row="2" Grid.Column="0" />
+
+            <Button Text="{Binding ExitTitle, Mode=OneWay}"
+                    Command="{Binding ExitCommand, Mode=OneWay}"
+                    Style="{StaticResource buttonStyle}"
+                    Grid.Row="3" Grid.Column="0" />
+        </Grid>
+    </ui:ExtendedContentPage.Content>
+
+</ui:ExtendedContentPage>

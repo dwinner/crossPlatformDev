@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:helpers="clr-namespace:IslandMenu.App.Helpers;assembly=IslandMenu.App"
+             xmlns:v="clr-namespace:IslandMenu.App.Views;assembly=IslandMenu.App"
+             xmlns:vm="clr-namespace:IslandMenu.App.ViewModels;assembly=IslandMenu.App"
+             Title="{helpers:Translate AppName}"
+             x:Class="IslandMenu.App.Views.RestaurantList">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <helpers:ImageResourceConverter x:Key="imageResourceCvt" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.BindingContext>
+        <vm:RestaurantsViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <Grid>
+            <Image Opacity="0.5"
+                   x:Name="img"
+                   Source="{Binding ImageUrl, Converter={StaticResource imageResourceCvt}}"
+                   Scale="1"
+                   Aspect="AspectFill" />
+            <StackLayout Padding="10,10,10,0">
+                <Grid HeightRequest="150">
+                    <Grid Style="{DynamicResource titleBox}">
+                        <StackLayout>
+                            <Label Text="{helpers:Translate AppDescription}" Style="{DynamicResource TitleStyle}" />
+                            <Label Text="{Binding LastUpdate}" Style="{DynamicResource titleStyleSmall}"
+                                   x:Name="lastUpdateLabel" />
+                        </StackLayout>
+                    </Grid>
+                </Grid>
+                <ListView ItemsSource="{Binding .}"
+                          SeparatorVisibility="None"
+                          BackgroundColor="Transparent"
+                          SeparatorColor="#DFDFDF"
+                          HasUnevenRows="false"
+                          RowHeight="160"
+                          ItemTapped="OnItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <v:RestaurantItem />
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
