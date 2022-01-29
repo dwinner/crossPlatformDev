@@ -9,9 +9,10 @@
     xmlns:bhvPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
     xmlns:vm="clr-namespace:MvvxSandboxApp.Core.ViewModels.State;assembly=SandboxApp.Core"
     xmlns:behaviors="clr-namespace:MvvxSandboxApp.UI.Behaviors;assembly=SandboxApp.UI"
-    x:DataType="vm:UsaStateListViewModel"
+    xmlns:state="clr-namespace:SandboxApp.Core.ViewModels.State;assembly=SandboxApp.Core"
+    x:DataType="state:UsaStateListViewModel"
     x:Name="root"
-    x:TypeArguments="vm:UsaStateListViewModel">
+    x:TypeArguments="state:UsaStateListViewModel">
 
     <ContentPage.ToolbarItems>
         <!--<ToolbarItem Text="View"

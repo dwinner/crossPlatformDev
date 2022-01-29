@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using MvvxSandboxApp.Core.ViewModels.State;
+using SandboxApp.Core.ViewModels.State;
 
 namespace MvvxSandboxApp.Core
 {
